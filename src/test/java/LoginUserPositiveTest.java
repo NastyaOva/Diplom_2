@@ -23,43 +23,13 @@ public class LoginUserPositiveTest extends BaseApiTest {
 
     @Test
     @DisplayName("Проверка успешной авторизации пользователя")
-    @Description("Проверка кода ответа при успешной авторизации пользователя")
+    @Description("Проверка кода и тела ответа при успешной авторизации пользователя")
     public void loginUserPositiveTest() {
         UserStep.checkStatusCodeUser(actualResponse, HTTP_OK);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешной авторизации пользователя")
-    @Description("Проверка наличия true в теле ответа")
-    public void checkSuccessUserLoginTest() {
         UserStep.checkSuccessUser(actualResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешной авторизации пользователя")
-    @Description("Проверка соответствия email в запросе и ответе при авторизации пользователя")
-    public void checkUserLoginEmailTest() {
         UserStep.checkUserEmail(actualResponse, userModel);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешной авторизации пользователя")
-    @Description("Проверка соответствия name в запросе и ответе при авторизации пользователя")
-    public void checkUserLoginNameTest() {
         UserStep.checkUserName(actualResponse, userModel);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешной авторизации пользователя")
-    @Description("Проверка наличия accessToken в теле ответа при авторизации пользователя")
-    public void checkAccessTokenIsNotNullLoginUserTest() {
         UserStep.checkAccessTokenIsNotNull(actualResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешной авторизации пользователя")
-    @Description("Проверка наличия refreshToken в теле ответа при авторизации пользователя")
-    public void checkRefreshTokenIsNotNullLoginUserTest() {
         UserStep.checkRefreshTokenIsNotNull(actualResponse);
     }
 }

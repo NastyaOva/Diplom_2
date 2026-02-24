@@ -22,22 +22,10 @@ public class ErrorCreateDuplicateUserTest extends BaseApiTest {
 
     @Test
     @DisplayName("Проверка ошибки создания пользователя, который уже существует")
-    @Description("Проверка кода ответа при попытке создать курьера, с параметрами уже существующего пользователя")
+    @Description("Проверка кода и тела ответа при попытке создать курьера, с параметрами уже существующего пользователя")
     public void checkErrorStatusCodeCreateDuplicateUserTest() {
         UserStep.checkStatusCodeUser(actualResponse, HTTP_FORBIDDEN);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя, который уже существует")
-    @Description("Проверка наличия false в теле ответа")
-    public void checkFalseCreateDuplicateUserTest() {
         UserStep.checkFalseUser(actualResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя, который уже существует")
-    @Description("Проверка текста ошибки при попытке создания пользователя")
-    public void checkMessageErrorCreateDuplicateUserTest() {
         UserStep.checkMessageErrorCreateUser(actualResponse, "User already exists");
     }
 }

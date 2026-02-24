@@ -24,29 +24,11 @@ public class CreateOrderWithoutLoginPositiveTest extends BaseApiTest {
 
     @Test
     @DisplayName("Проверка успешного создания заказа без авторизации")
-    @Description("Проверка кода ответа при создании заказа")
+    @Description("Проверка кода и тела ответа при создании заказа")
     public void createOrderWithoutLoginTest() {
         OrderStep.checkStatusCodeOrder(responseOrder, HTTP_OK);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа без авторизации")
-    @Description("Проверка наличия true в теле ответа")
-    public void checkSuccessOrderWithoutLoginTest() {
         OrderStep.checkSuccessOrder(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа без авторизации")
-    @Description("Проверка наличия названия бургера в теле ответа при создании заказа без авторизации")
-    public void checkNameBurgerIsNotNullWithoutLoginTest() {
         OrderStep.checkNameBurgerIsNotNull(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа без авторизации")
-    @Description("Проверка наличия номера заказа в теле ответа при создании заказа без авторизации")
-    public void checkNumberOrderIsNotNullWithoutLoginTest() {
         OrderStep.checkNumberOrderIsNotNull(responseOrder);
     }
 }

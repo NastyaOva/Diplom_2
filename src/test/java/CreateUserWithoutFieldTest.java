@@ -30,64 +30,28 @@ public class CreateUserWithoutFieldTest extends BaseApiTest {
 
     @Test
     @DisplayName("Проверка ошибки при попытке создать пользователя без поля email")
-    @Description("Проверка кода ответа при попытке создания пользователя без заполнения поля email")
+    @Description("Проверка кода и тела ответа при попытке создания пользователя без заполнения поля email")
     public void checkErrorStatusCodeCreateUserWithoutEmailTest() {;
         UserStep.checkStatusCodeUser(firstResponse, HTTP_FORBIDDEN);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля email")
-    @Description("Проверка наличия false в теле ответа при попытке создания пользователя без заполнения поля email")
-    public void checkFalseCreateUserWithoutEmailTest() {
         UserStep.checkFalseUser(firstResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля email")
-    @Description("Проверка текста ошибки при попытке создания пользователя")
-    public void checkMessageErrorCreateUserWithoutEmailTest() {
         UserStep.checkMessageErrorCreateUser(firstResponse, "Email, password and name are required fields");
     }
 
     @Test
     @DisplayName("Проверка ошибки при попытке создать пользователя без поля password")
-    @Description("Проверка кода ответа при попытке создания пользователя без заполнения поля password")
+    @Description("Проверка кода и тела ответа при попытке создания пользователя без заполнения поля password")
     public void checkErrorStatusCodeCreateUserWithoutPasswordTest() {;
         UserStep.checkStatusCodeUser(secondResponse, HTTP_FORBIDDEN);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля password")
-    @Description("Проверка наличия false в теле ответа при попытке создания пользователя без заполнения поля password")
-    public void checkFalseCreateUserWithoutPasswordTest() {
         UserStep.checkFalseUser(secondResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля password")
-    @Description("Проверка текста ошибки при попытке создания пользователя")
-    public void checkMessageErrorCreateUserWithoutPasswordTest() {
         UserStep.checkMessageErrorCreateUser(secondResponse, "Email, password and name are required fields");
     }
 
     @Test
     @DisplayName("Проверка ошибки при попытке создать пользователя без поля name")
-    @Description("Проверка кода ответа при попытке создания пользователя без заполнения поля name")
+    @Description("Проверка кода и тела ответа при попытке создания пользователя без заполнения поля name")
     public void checkErrorStatusCodeCreateUserWithoutNameTest() {;
         UserStep.checkStatusCodeUser(thirdResponse, HTTP_FORBIDDEN);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля name")
-    @Description("Проверка наличия false в теле ответа при попытке создания пользователя без заполнения поля name")
-    public void checkFalseCreateUserWithoutNameTest() {
         UserStep.checkFalseUser(thirdResponse);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при создании пользователя без поля name")
-    @Description("Проверка текста ошибки при попытке создания пользователя")
-    public void checkMessageErrorCreateUserWithoutNameTest() {
         UserStep.checkMessageErrorCreateUser(thirdResponse, "Email, password and name are required fields");
     }
 }

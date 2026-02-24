@@ -31,71 +31,17 @@ public class CreateOrderWithLoginPositiveTest extends BaseApiTest {
 
     @Test
     @DisplayName("Проверка успешного создания заказа c авторизацией")
-    @Description("Проверка кода ответа при создании заказа")
+    @Description("Проверка кода и тела ответа при создании заказа")
     public void createOrderWithLoginTest() {
         OrderStep.checkStatusCodeOrder(responseOrder, HTTP_OK);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия true в теле ответа")
-    public void checkSuccessOrderWithLoginTest() {
         OrderStep.checkSuccessOrder(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия названия бургера в теле ответа при создании заказа c авторизацией")
-    public void checkNameBurgerIsNotNullWithLoginTest() {
         OrderStep.checkNameBurgerIsNotNull(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия номера заказа в теле ответа при создании заказа c авторизацией")
-    public void checkNumberOrderIsNotNullWithLoginTest() {
         OrderStep.checkNumberOrderIsNotNull(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия ингредиентов в теле ответа при создании заказа с авторизацией")
-    public void checkIngredientsIsNotNullTest() {
         OrderStep.checkIngredientsIsNotNull(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия id заказа в теле ответа при создании заказа с авторизацией")
-    public void checkIdIsNotNullTest() {
         OrderStep.checkIdIsNotNull(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия имени пользователя в теле ответа при создании заказа с авторизацией")
-    public void checkUserNameTest() {
         OrderStep.checkUserName(responseOrder, userModel.getName());
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия почты пользователя в теле ответа при создании заказа с авторизацией")
-    public void checkUserEmailTest() {
         OrderStep.checkUserEmail(responseOrder, userModel.getEmail());
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка статуса заказа в теле ответа при создании заказа с авторизацией")
-    public void checkStatusShouldBeDoneTest() {
         OrderStep.checkStatusShouldBeDone(responseOrder);
-    }
-
-    @Test
-    @DisplayName("Проверка тела ответа при успешном создании заказа c авторизацией")
-    @Description("Проверка наличия суммы заказа в теле ответа при создании заказа с авторизацией")
-    public void checkPriceOrderIsNotNullTest() {
         OrderStep.checkPriceOrderIsNotNull(responseOrder);
     }
 }
